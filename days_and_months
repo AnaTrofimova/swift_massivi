@@ -1,0 +1,31 @@
+
+let days_kolvo = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+
+let month_names = ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"]
+
+print("Количество дней в каждом месяце:")
+for i in days_kolvo {
+    print(i)
+}
+
+print("\nНазвание месяца + количество дней:")
+for i in 0..<month_names.count {
+    print("\(month_names[i]): \(days_kolvo[i]) дней")
+}
+
+let months_kortezh: [(String, Int)] = zip(month_names, days_kolvo).map { ($0, $1) }
+
+print("\nИспользование массива tuples:")
+for (month, days) in months_kortezh {
+    print("\(month): \(days) дней")
+}
+
+print("\nКоличество дней в обратном порядке:")
+for i in days_kolvo.reversed() {
+    print(i)
+}
+
+let randomMonth = 3 
+let randomDay = 15
+let daysUntilDate = days_kolvo[0..<randomMonth].reduce(0, +) + randomDay
+print("\nКоличество дней до \(randomDay). \(randomMonth): \(daysUntilDate)")
